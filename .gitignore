@@ -1,0 +1,5 @@
+.sdk
+protoc.exe
+.idea/*
+DotSettings.user
+.DS_Store

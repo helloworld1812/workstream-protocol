@@ -1,0 +1,9 @@
+syntax = "proto3";
+package Workstream.Protocol.Common;
+option go_package = "workstream_protocol/common/phone";
+
+message Phone {
+  string country_code =1; // need Vincent's review
+  string number =2;       // need Vincent's review
+  string extension =3;    // need Vincent's review
+};

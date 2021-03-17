@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "Common/CountryCode.proto";
+
+package Workstream.Protocol.Common;
+option go_package = "workstream_protocol/common/address";
+
+message Address {
+  string address1 =1;
+  string address2 =2;
+  string city =3;
+  string county =4;
+  string zip =20;
+  string country_sub_division_code =19;
+  Workstream.Protocol.Common.CountryCode country_code =21;
+};

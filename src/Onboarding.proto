@@ -1,0 +1,151 @@
+syntax = "proto3";
+import "Common/Phone.proto";
+import "Common/Address.proto";
+import "google/protobuf/timestamp.proto";
+
+package Workstream.Protocol.Onboarding;
+
+option go_package = "workstream_protocol/onboarding";
+
+message CompanyEvent {
+  string uuid =1;
+  int64 id =2;
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+
+  string name =5;
+  enum CompanyStatus {
+    ACTIVE = 0;
+    TEST = 1;
+    DISABLED = 2;
+    TEMPLATE = 3;
+  };
+  CompanyStatus status =6;
+}
+
+message EmployeeEvent {
+  string uuid =1;
+  int64 id =2;
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+  int64 company_id =5;
+
+  // the following lines need Vincent's review
+  // employee's sttus should be active, terminated, ?
+  // please carefully think about it.
+  //  enum Status {
+  //    ACTIVE = 0;
+  //    ARCHIVED = 1;
+  //    DELETED = 2;
+  //  }
+  //  Status status =7;
+
+  //  int64 copmany_staff_id =5;
+}
+
+message CompanyStaffEvent {
+  string uuid =1;
+  int64 id =2;
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+
+  enum CompanyStaffStatus {
+    ACTIVE = 0;
+    DISABLED = 1;
+  };
+  CompanyStaffStatus status =5;
+  int64 company_id =6;
+  string name =7;
+  string email =8;
+  Workstream.Protocol.Common.Phone phone =9;
+}
+
+message EmergencyContact {
+  string relationship = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string home_phone = 4;
+  string work_phone = 5;
+  string email = 6;
+  Workstream.Protocol.Common.Address address = 7;
+};
+
+enum MaritalStatus {
+  MARRIED = 0;
+  DIVORCED = 1;
+  WIDOWED = 2;
+  NEVER_MARRIED = 3;
+  SEPARATED =4;
+};
+
+message EmployeeInformationEvent {
+  string uuid =1;
+  int64 id =2;
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+  int64 company_id =5;
+  int64 employee_id =6;
+  string first_name =7;
+  string middle_name =8;
+  string last_name =9;
+  string prior_last_name =10;
+  string prefered_name =11;
+  string salutation =12;
+  string ethnicity =13;
+  string gender =14;
+  MaritalStatus marital_status =15;
+  string ssn =16;
+  bool smoker =17;
+  string nationality =18;
+  string date_of_birth = 19;
+  reserved 20 to 30;
+
+  // Home Address
+  string home_email =31;
+  Workstream.Protocol.Common.Phone home_phone =32;
+  Workstream.Protocol.Common.Address home_address =33;
+  reserved 34 to 40;
+
+  // Work Address
+  string work_location_name =41;
+  string work_email =42;
+  Workstream.Protocol.Common.Phone work_phone =43;
+  Workstream.Protocol.Common.Address work_address =44;
+  reserved 45 to 50;
+
+  // Emergency Contact
+  repeated EmergencyContact emergency_contact =51;
+
+  // Employment details
+  string apply_date =52;
+  string hire_date =53;
+  string start_date =54;
+  string termination_date =55;
+  string job_title =56;
+  string department_name =57;
+
+  // todo: need to learn domain knowledge first.
+//  string compensation_employment_status =38;
+//  string compensation_status =39;
+//  string compensation_wage_currency_code =40;
+//  string compensation_wage_amount =41;
+//  string compensation_wage_pay_frequency =42;
+//  string compensation_additional_remuneration =43;
+//  string compensation_additional_remuneration_currency_code =44;
+
+//  repeated DirectDepoist
+
+}
+
+message EmployeeInitialStateEvent {
+  string uuid =1;
+  int64 id =2;
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+  int64 employee_id =5;
+
+  string first_name =6;
+  string last_name =7;
+//  google.protobuf.Timestamp applied_date =9;
+}
+

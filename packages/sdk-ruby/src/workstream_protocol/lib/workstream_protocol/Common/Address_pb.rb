@@ -4,6 +4,7 @@
 require 'google/protobuf'
 
 require 'Common/CountryCode_pb'
+
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("Common/Address.proto", :syntax => :proto3) do
     add_message "Workstream.Protocol.Common.Address" do

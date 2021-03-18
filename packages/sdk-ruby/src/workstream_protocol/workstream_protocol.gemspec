@@ -1,11 +1,10 @@
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# lib = File.expand_path("../lib", __FILE__)
+# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-protocols = File.expand_path("../lib/workstream_protocol", __FILE__)
-$LOAD_PATH.unshift(protocols) unless $LOAD_PATH.include?(protocols)
 
-require "workstream_protocol/version"
+# require "workstream_protocol/version"
 
+require_relative "lib/workstream_protocol/version"
 Gem::Specification.new do |spec|
   spec.name          = "workstream_protocol"
   spec.version       = WorkstreamProtocol::VERSION
@@ -35,6 +34,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'google-protobuf'
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "aws"
-  spec.add_development_dependency "aws-sdk-sns"
+  # spec.add_development_dependency "aws"
+  # spec.add_development_dependency "aws-sdk-sns"
+  spec.add_development_dependency 'gem-release'
 end

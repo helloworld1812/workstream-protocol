@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(protocols) unless $LOAD_PATH.include?(protocols)
 
 require 'Onboarding_pb'
 require 'utils/timestamp'
+require 'utils/date'
 
 
 module WorkstreamProtocol

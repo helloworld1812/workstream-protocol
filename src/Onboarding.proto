@@ -2,6 +2,7 @@ syntax = "proto3";
 import "Common/Phone.proto";
 import "Common/Address.proto";
 import "google/protobuf/timestamp.proto";
+import "Common/Date.proto";
 
 package Workstream.Protocol.Onboarding;
 
@@ -9,26 +10,28 @@ option go_package = "workstream_protocol/onboarding";
 
 message CompanyEvent {
   string uuid =1;
-  int64 id =2;
-  google.protobuf.Timestamp created_at =3;
-  google.protobuf.Timestamp updated_at =4;
+
+  google.protobuf.Timestamp created_at =2;
+  google.protobuf.Timestamp updated_at =3;
+  google.protobuf.Timestamp deleted_at =4;
 
   string name =5;
-  enum CompanyStatus {
-    ACTIVE = 0;
-    TEST = 1;
-    DISABLED = 2;
-    TEMPLATE = 3;
-  };
-  CompanyStatus status =6;
+//  enum CompanyStatus {
+//    ACTIVE = 0;
+//    TEST = 1;
+//    DISABLED = 2;
+//    TEMPLATE = 3;
+//  };
+  string status =6;
 }
 
 message EmployeeEvent {
   string uuid =1;
-  int64 id =2;
+  string company_uuid =2;
+
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
-  int64 company_id =5;
+  google.protobuf.Timestamp deleted_at =5;
 
   // the following lines need Vincent's review
   // employee's sttus should be active, terminated, ?
@@ -45,16 +48,17 @@ message EmployeeEvent {
 
 message CompanyStaffEvent {
   string uuid =1;
-  int64 id =2;
+  string company_uuid =2;
+
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
+  google.protobuf.Timestamp deleted_at =5;
 
-  enum CompanyStaffStatus {
-    ACTIVE = 0;
-    DISABLED = 1;
-  };
-  CompanyStaffStatus status =5;
-  int64 company_id =6;
+//  enum CompanyStaffStatus {
+//    ACTIVE = 0;
+//    DISABLED = 1;
+//  };
+  string status =6;
   string name =7;
   string email =8;
   Workstream.Protocol.Common.Phone phone =9;
@@ -70,35 +74,38 @@ message EmergencyContact {
   Workstream.Protocol.Common.Address address = 7;
 };
 
-enum MaritalStatus {
-  MARRIED = 0;
-  DIVORCED = 1;
-  WIDOWED = 2;
-  NEVER_MARRIED = 3;
-  SEPARATED =4;
-};
+//enum MaritalStatus {
+//  MARRIED = 0;
+//  DIVORCED = 1;
+//  WIDOWED = 2;
+//  NEVER_MARRIED = 3;
+//  SEPARATED =4;
+//};
 
 message EmployeeInformationEvent {
   string uuid =1;
-  int64 id =2;
-  google.protobuf.Timestamp created_at =3;
-  google.protobuf.Timestamp updated_at =4;
-  int64 company_id =5;
-  int64 employee_id =6;
+  string employee_uuid =2;
+  string company_uuid =3;
+
+  google.protobuf.Timestamp created_at =4;
+  google.protobuf.Timestamp updated_at =5;
+  google.protobuf.Timestamp deleted_at =6;
+
   string first_name =7;
   string middle_name =8;
   string last_name =9;
   string prior_last_name =10;
-  string prefered_name =11;
+  string preferred_name =11;
   string salutation =12;
   string ethnicity =13;
   string gender =14;
-  MaritalStatus marital_status =15;
+  string marital_status =15;
   string ssn =16;
   bool smoker =17;
   string nationality =18;
-  string date_of_birth = 19;
-  reserved 20 to 30;
+  Workstream.Protocol.Common.Date date_of_birth =19;
+  string middle_initial =20;
+  reserved 21 to 30;
 
   // Home Address
   string home_email =31;
@@ -117,10 +124,10 @@ message EmployeeInformationEvent {
   repeated EmergencyContact emergency_contact =51;
 
   // Employment details
-  string apply_date =52;
-  string hire_date =53;
-  string start_date =54;
-  string termination_date =55;
+  Workstream.Protocol.Common.Date apply_date =52;
+  Workstream.Protocol.Common.Date hire_date =53;
+  Workstream.Protocol.Common.Date start_date =54;
+  Workstream.Protocol.Common.Date termination_date =55;
   string job_title =56;
   string department_name =57;
 
@@ -140,12 +147,14 @@ message EmployeeInformationEvent {
 message EmployeeInitialStateEvent {
   string uuid =1;
   int64 id =2;
+
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
-  int64 employee_id =5;
+  google.protobuf.Timestamp deleted_at =5;
 
-  string first_name =6;
-  string last_name =7;
-//  google.protobuf.Timestamp applied_date =9;
+  string employee_uuid =6;
+  string first_name =7;
+  string last_name =8;
+//  string applied_date =9;
 }
 

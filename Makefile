@@ -2,11 +2,11 @@ all: buildcpp buildjava buildjs buildobjc buildphp buildpython buildruby buildgo
 
 .PHONY: buildcpp
 buildcpp:
-	cd packages/sdk-cpp && make build;
+# 	cd packages/sdk-cpp && make build;
 
 .PHONY: buildjava
 buildjava:
-	cd packages/sdk-java && make build;
+# 	cd packages/sdk-java && make build;
 
 .PHONY: buildjs
 buildjs:
@@ -14,15 +14,15 @@ buildjs:
 
 .PHONY: buildobjc
 buildobjc:
-	cd packages/sdk-objc && make build;
+# 	cd packages/sdk-objc && make build;
 
 .PHONY: buildphp
 buildphp:
-	cd packages/sdk-php && make build;
+# 	cd packages/sdk-php && make build;
 
 .PHONY: buildpython
 buildpython:
-	cd packages/sdk-python && make build;
+# 	cd packages/sdk-python && make build;
 
 .PHONY: buildruby
 buildruby:

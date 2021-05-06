@@ -8,31 +8,44 @@ package Workstream.Protocol.Onboarding;
 
 option go_package = "workstream_protocol/onboarding";
 
-message CompanyEvent {
-  string uuid =1;
-
-  google.protobuf.Timestamp created_at =2;
-  google.protobuf.Timestamp updated_at =3;
-  google.protobuf.Timestamp deleted_at =4;
-
-  string name =5;
-//  enum CompanyStatus {
-//    ACTIVE = 0;
-//    TEST = 1;
-//    DISABLED = 2;
-//    TEMPLATE = 3;
-//  };
-  string status =6;
-}
-
-message EmployeeEvent {
-  string uuid =1;
-  string company_uuid =2;
+message OnboardingEvent {
+  int64 id =1;
+  string uuid =2;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
+  string company_uuid =6;
+  string employee_uuid =7;
+  string app_name =8;
+  string configuration_uuid =9;
+}
+
+
+message CompanyEvent {
+  int64 id =1;
+  string uuid =2;
+
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+  google.protobuf.Timestamp deleted_at =5;
+
+  string name =6;
+  string status =7;
+}
+
+message EmployeeEvent {
+  int64 id =1;
+  string uuid =2;
+
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+  google.protobuf.Timestamp deleted_at =5;
+
+  string company_uuid =6;
+
+//  string applied_date =9;
   // the following lines need Vincent's review
   // employee's sttus should be active, terminated, ?
   // please carefully think about it.
@@ -47,21 +60,23 @@ message EmployeeEvent {
 }
 
 message CompanyStaffEvent {
-  string uuid =1;
-  string company_uuid =2;
+  int64 id =1;
+  string uuid =2;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
+  string company_uuid =6;
+
 //  enum CompanyStaffStatus {
 //    ACTIVE = 0;
 //    DISABLED = 1;
 //  };
-  string status =6;
-  string name =7;
-  string email =8;
-  Workstream.Protocol.Common.Phone phone =9;
+  string status =7;
+  string name =8;
+  string email =9;
+  Workstream.Protocol.Common.Phone phone =10;
 }
 
 message EmergencyContact {
@@ -83,29 +98,28 @@ message EmergencyContact {
 //};
 
 message EmployeeInformationEvent {
-  string uuid =1;
-  string employee_uuid =2;
-  string company_uuid =3;
+  int64 id =1;
+  string uuid =2;
 
-  google.protobuf.Timestamp created_at =4;
-  google.protobuf.Timestamp updated_at =5;
-  google.protobuf.Timestamp deleted_at =6;
+  google.protobuf.Timestamp created_at =3;
+  google.protobuf.Timestamp updated_at =4;
+  google.protobuf.Timestamp deleted_at =5;
 
-  string first_name =7;
-  string middle_name =8;
-  string last_name =9;
-  string prior_last_name =10;
-  string preferred_name =11;
-  string salutation =12;
-  string ethnicity =13;
-  string gender =14;
-  string marital_status =15;
-  string ssn =16;
-  bool smoker =17;
-  string nationality =18;
-  Workstream.Protocol.Common.Date date_of_birth =19;
-  string middle_initial =20;
-  reserved 21 to 30;
+  string first_name =8;
+  string middle_name =9;
+  string last_name =10;
+  string prior_last_name =11;
+  string preferred_name =12;
+  string salutation =13;
+  string ethnicity =14;
+  string gender =15;
+  string marital_status =16;
+  string ssn =17;
+  bool smoker =18;
+  string nationality =19;
+  Workstream.Protocol.Common.Date date_of_birth =20;
+  string middle_initial =21;
+  reserved 22 to 30;
 
   // Home Address
   string home_email =31;
@@ -131,22 +145,11 @@ message EmployeeInformationEvent {
   string job_title =56;
   string department_name =57;
 
-  // todo: need to learn domain knowledge first.
-//  string compensation_employment_status =38;
-//  string compensation_status =39;
-//  string compensation_wage_currency_code =40;
-//  string compensation_wage_amount =41;
-//  string compensation_wage_pay_frequency =42;
-//  string compensation_additional_remuneration =43;
-//  string compensation_additional_remuneration_currency_code =44;
-
-//  repeated DirectDepoist
-
 }
 
 message EmployeeInitialStateEvent {
-  string uuid =1;
-  int64 id =2;
+  int64 id =1;
+  string uuid =2;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;

@@ -19,7 +19,8 @@ message OnboardingEvent {
   string company_uuid =6;
   string employee_uuid =7;
   string app_name =8;
-  string configuration_uuid =9;
+  string version =9;
+  string configuration_uuid =10;
 }
 
 

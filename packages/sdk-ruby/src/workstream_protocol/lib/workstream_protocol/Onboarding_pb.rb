@@ -18,7 +18,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :company_uuid, :string, 6
       optional :employee_uuid, :string, 7
       optional :app_name, :string, 8
-      optional :configuration_uuid, :string, 9
+      optional :version, :string, 9
+      optional :configuration_uuid, :string, 10
     end
     add_message "Workstream.Protocol.Onboarding.CompanyEvent" do
       optional :id, :int64, 1

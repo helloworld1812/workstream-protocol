@@ -11,8 +11,8 @@ require "pry"
 # Pry.start
 
 # AWS stuffs
-require 'aws'
-require 'aws-sdk-sns'
+# require 'aws'
+# require 'aws-sdk-sns'
 
 require "irb"
 IRB.start(__FILE__)

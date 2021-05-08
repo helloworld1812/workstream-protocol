@@ -16,10 +16,10 @@ message OnboardingEvent {
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  string company_uuid =6;
-  string employee_uuid =7;
+  int64 company_id =6;
+  int64 employee_id =7;
   string app_name =8;
-  string version =9;
+  string app_version =9;
   string configuration_uuid =10;
 }
 
@@ -44,20 +44,7 @@ message EmployeeEvent {
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  string company_uuid =6;
-
-//  string applied_date =9;
-  // the following lines need Vincent's review
-  // employee's sttus should be active, terminated, ?
-  // please carefully think about it.
-  //  enum Status {
-  //    ACTIVE = 0;
-  //    ARCHIVED = 1;
-  //    DELETED = 2;
-  //  }
-  //  Status status =7;
-
-  //  int64 copmany_staff_id =5;
+  int64 company_id =6;
 }
 
 message CompanyStaffEvent {
@@ -68,12 +55,7 @@ message CompanyStaffEvent {
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  string company_uuid =6;
-
-//  enum CompanyStaffStatus {
-//    ACTIVE = 0;
-//    DISABLED = 1;
-//  };
+  int64 company_id =6;
   string status =7;
   string name =8;
   string email =9;
@@ -106,21 +88,24 @@ message EmployeeInformationEvent {
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  string first_name =8;
-  string middle_name =9;
-  string last_name =10;
-  string prior_last_name =11;
-  string preferred_name =12;
-  string salutation =13;
-  string ethnicity =14;
-  string gender =15;
-  string marital_status =16;
-  string ssn =17;
-  bool smoker =18;
-  string nationality =19;
-  Workstream.Protocol.Common.Date date_of_birth =20;
-  string middle_initial =21;
-  reserved 22 to 30;
+  int64 employee_id =8;
+  reserved 9 to 10;
+
+  string first_name =11;
+  string middle_name =12;
+  string last_name =13;
+  string prior_last_name =14;
+  string preferred_name =15;
+  string salutation =16;
+  string ethnicity =17;
+  string gender =18;
+  string marital_status =19;
+  string ssn =20;
+  bool smoker =21;
+  string nationality =22;
+  Workstream.Protocol.Common.Date date_of_birth =23;
+  string middle_initial =24;
+  reserved 25 to 30;
 
   // Home Address
   string home_email =31;
@@ -156,7 +141,7 @@ message EmployeeInitialStateEvent {
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  string employee_uuid =6;
+  int64 employee_id =6;
   string first_name =7;
   string last_name =8;
 //  string applied_date =9;

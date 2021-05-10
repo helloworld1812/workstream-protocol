@@ -9,21 +9,19 @@ require 'google/protobuf/timestamp_pb'
 require 'Common/Date_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("Onboarding.proto", :syntax => :proto3) do
-    add_message "Workstream.Protocol.Onboarding.OnboardingEvent" do
-      optional :id, :int64, 1
-      optional :uuid, :string, 2
+    add_message "Workstream.Protocol.Onboarding.EmployeeOnboardingEvent" do
+      optional :id, :string, 1
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
-      optional :company_uuid, :string, 6
-      optional :employee_uuid, :string, 7
+      optional :company_id, :string, 6
+      optional :employee_id, :string, 7
       optional :app_name, :string, 8
-      optional :version, :string, 9
-      optional :configuration_uuid, :string, 10
+      optional :app_version, :string, 9
+      optional :configuration_id, :string, 10
     end
     add_message "Workstream.Protocol.Onboarding.CompanyEvent" do
-      optional :id, :int64, 1
-      optional :uuid, :string, 2
+      optional :id, :string, 1
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
@@ -31,20 +29,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :status, :string, 7
     end
     add_message "Workstream.Protocol.Onboarding.EmployeeEvent" do
-      optional :id, :int64, 1
-      optional :uuid, :string, 2
+      optional :id, :string, 1
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
-      optional :company_uuid, :string, 6
+      optional :company_id, :string, 6
     end
     add_message "Workstream.Protocol.Onboarding.CompanyStaffEvent" do
-      optional :id, :int64, 1
-      optional :uuid, :string, 2
+      optional :id, :string, 1
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
-      optional :company_uuid, :string, 6
+      optional :company_id, :string, 6
       optional :status, :string, 7
       optional :name, :string, 8
       optional :email, :string, 9
@@ -60,25 +56,25 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :address, :message, 7, "Workstream.Protocol.Common.Address"
     end
     add_message "Workstream.Protocol.Onboarding.EmployeeInformationEvent" do
-      optional :id, :int64, 1
-      optional :uuid, :string, 2
+      optional :id, :string, 1
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
-      optional :first_name, :string, 8
-      optional :middle_name, :string, 9
-      optional :last_name, :string, 10
-      optional :prior_last_name, :string, 11
-      optional :preferred_name, :string, 12
-      optional :salutation, :string, 13
-      optional :ethnicity, :string, 14
-      optional :gender, :string, 15
-      optional :marital_status, :string, 16
-      optional :ssn, :string, 17
-      optional :smoker, :bool, 18
-      optional :nationality, :string, 19
-      optional :date_of_birth, :message, 20, "Workstream.Protocol.Common.Date"
-      optional :middle_initial, :string, 21
+      optional :employee_id, :string, 8
+      optional :first_name, :string, 11
+      optional :middle_name, :string, 12
+      optional :last_name, :string, 13
+      optional :prior_last_name, :string, 14
+      optional :preferred_name, :string, 15
+      optional :salutation, :string, 16
+      optional :ethnicity, :string, 17
+      optional :gender, :string, 18
+      optional :marital_status, :string, 19
+      optional :ssn, :string, 20
+      optional :smoker, :bool, 21
+      optional :nationality, :string, 22
+      optional :date_of_birth, :message, 23, "Workstream.Protocol.Common.Date"
+      optional :middle_initial, :string, 24
       optional :home_email, :string, 31
       optional :home_phone, :message, 32, "Workstream.Protocol.Common.Phone"
       optional :home_address, :message, 33, "Workstream.Protocol.Common.Address"
@@ -95,12 +91,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :department_name, :string, 57
     end
     add_message "Workstream.Protocol.Onboarding.EmployeeInitialStateEvent" do
-      optional :id, :int64, 1
-      optional :uuid, :string, 2
+      optional :id, :string, 1
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
-      optional :employee_uuid, :string, 6
+      optional :employee_id, :string, 6
       optional :first_name, :string, 7
       optional :last_name, :string, 8
     end
@@ -110,7 +105,7 @@ end
 module Workstream
   module Protocol
     module Onboarding
-      OnboardingEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.OnboardingEvent").msgclass
+      EmployeeOnboardingEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeOnboardingEvent").msgclass
       CompanyEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.CompanyEvent").msgclass
       EmployeeEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeEvent").msgclass
       CompanyStaffEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.CompanyStaffEvent").msgclass

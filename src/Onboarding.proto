@@ -8,25 +8,23 @@ package Workstream.Protocol.Onboarding;
 
 option go_package = "workstream_protocol/onboarding";
 
-message OnboardingEvent {
-  int64 id =1;
-  string uuid =2;
+message EmployeeOnboardingEvent {
+  string id =1;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  int64 company_id =6;
-  int64 employee_id =7;
+  string company_id =6;
+  string employee_id =7;
   string app_name =8;
   string app_version =9;
-  string configuration_uuid =10;
+  string configuration_id =10;
 }
 
 
 message CompanyEvent {
-  int64 id =1;
-  string uuid =2;
+  string id =1;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
@@ -37,25 +35,23 @@ message CompanyEvent {
 }
 
 message EmployeeEvent {
-  int64 id =1;
-  string uuid =2;
+  string id =1;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  int64 company_id =6;
+  string company_id =6;
 }
 
 message CompanyStaffEvent {
-  int64 id =1;
-  string uuid =2;
+  string id =1;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  int64 company_id =6;
+  string  company_id =6;
   string status =7;
   string name =8;
   string email =9;
@@ -81,14 +77,13 @@ message EmergencyContact {
 //};
 
 message EmployeeInformationEvent {
-  int64 id =1;
-  string uuid =2;
+  string id =1;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  int64 employee_id =8;
+  string employee_id =8;
   reserved 9 to 10;
 
   string first_name =11;
@@ -134,14 +129,13 @@ message EmployeeInformationEvent {
 }
 
 message EmployeeInitialStateEvent {
-  int64 id =1;
-  string uuid =2;
+  string id =1;
 
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  int64 employee_id =6;
+  string employee_id =6;
   string first_name =7;
   string last_name =8;
 //  string applied_date =9;

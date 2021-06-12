@@ -4,9 +4,9 @@ build:
 
 .PHONY: release_minor
 release_minor:
-	pushd src; gem bump --version minor; popd;
+	pushd src; gem bump --version minor; gem release; popd;
 
 .PHONY: release_patch
 release_patch:
-	pushd src; gem bump --version patch; popd
+	pushd src; gem bump --version patch; gem release; popd;
 

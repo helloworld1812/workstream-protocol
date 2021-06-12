@@ -46,6 +46,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :email, :string, 9
       optional :phone, :message, 10, "Workstream.Protocol.Common.Phone"
     end
+    add_message "Workstream.Protocol.Onboarding.CompanyRoleEvent" do
+      optional :id, :string, 1
+      optional :name, :string, 2
+      optional :status, :string, 3
+      optional :company_id, :string, 4
+      optional :created_at, :message, 5, "google.protobuf.Timestamp"
+      optional :updated_at, :message, 6, "google.protobuf.Timestamp"
+      optional :deleted_at, :message, 7, "google.protobuf.Timestamp"
+    end
     add_message "Workstream.Protocol.Onboarding.EmergencyContact" do
       optional :relationship, :string, 1
       optional :first_name, :string, 2
@@ -109,6 +118,7 @@ module Workstream
       CompanyEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.CompanyEvent").msgclass
       EmployeeEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeEvent").msgclass
       CompanyStaffEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.CompanyStaffEvent").msgclass
+      CompanyRoleEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.CompanyRoleEvent").msgclass
       EmergencyContact = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmergencyContact").msgclass
       EmployeeInformationEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeInformationEvent").msgclass
       EmployeeInitialStateEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeInitialStateEvent").msgclass

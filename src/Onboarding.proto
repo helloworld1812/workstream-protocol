@@ -58,6 +58,16 @@ message CompanyStaffEvent {
   Workstream.Protocol.Common.Phone phone =10;
 }
 
+message CompanyRoleEvent {
+  string id =1;
+  string name =2;
+  string status =3;
+  string company_id =4;
+  google.protobuf.Timestamp created_at =5;
+  google.protobuf.Timestamp updated_at =6;
+  google.protobuf.Timestamp deleted_at =7;
+}
+
 message EmergencyContact {
   string relationship = 1;
   string first_name = 2;

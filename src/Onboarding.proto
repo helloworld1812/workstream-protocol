@@ -20,6 +20,7 @@ message EmployeeOnboardingEvent {
   string app_name =8;
   string app_version =9;
   string configuration_id =10;
+  string configuration_snapshot =11;
 }
 
 

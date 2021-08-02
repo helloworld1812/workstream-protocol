@@ -93,7 +93,7 @@ message EmployeeInformationEvent {
   google.protobuf.Timestamp created_at =3;
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
-
+  string company_id =6;
   string employee_id =8;
   reserved 9 to 10;
 

@@ -3,17 +3,16 @@
 
 require 'google/protobuf'
 
-require 'Common/CountryCode_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("Common/Address.proto", :syntax => :proto3) do
     add_message "Workstream.Protocol.Common.Address" do
-      optional :address1, :string, 1
-      optional :address2, :string, 2
+      optional :line_one, :string, 1
+      optional :line_two, :string, 2
       optional :city, :string, 3
       optional :county, :string, 4
-      optional :zip, :string, 20
-      optional :country_sub_division_code, :string, 19
-      optional :country_code, :enum, 21, "Workstream.Protocol.Common.CountryCode"
+      optional :postal_code, :string, 5
+      optional :country_subdivision, :string, 6
+      optional :country, :string, 7
     end
   end
 end

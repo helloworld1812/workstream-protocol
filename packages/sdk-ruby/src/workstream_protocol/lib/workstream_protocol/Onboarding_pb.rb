@@ -70,6 +70,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :created_at, :message, 3, "google.protobuf.Timestamp"
       optional :updated_at, :message, 4, "google.protobuf.Timestamp"
       optional :deleted_at, :message, 5, "google.protobuf.Timestamp"
+      optional :company_id, :string, 6
       optional :employee_id, :string, 8
       optional :first_name, :string, 11
       optional :middle_name, :string, 12

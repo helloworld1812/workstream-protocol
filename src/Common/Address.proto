@@ -1,15 +1,16 @@
 syntax = "proto3";
-import "Common/CountryCode.proto";
+// import "Common/CountryCode.proto";
 
 package Workstream.Protocol.Common;
 option go_package = "workstream_protocol/common/address";
 
 message Address {
-  string address1 =1;
-  string address2 =2;
+  string line_one =1;
+  string line_two =2;
   string city =3;
   string county =4;
-  string zip =20;
-  string country_sub_division_code =19;
-  Workstream.Protocol.Common.CountryCode country_code =21;
+  string postal_code =5;
+  string country_subdivision =6; // ISO 3166 subdivision code
+  string country =7;             // ISO 3166 alpha-2
+  // Workstream.Protocol.Common.CountryCode country_code =21;
 };

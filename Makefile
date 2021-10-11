@@ -30,7 +30,7 @@ buildruby:
 
 .PHONY: buildgo
 buildgo:
-	cd packages/sdk-go && make build;
+	#cd packages/sdk-go && make build;
 
 
 .PHONY: buildrust

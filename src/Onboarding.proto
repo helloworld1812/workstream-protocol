@@ -117,7 +117,8 @@ message EmployeeInformationEvent {
   string home_email =31;
   Workstream.Protocol.Common.Phone home_phone =32;
   Workstream.Protocol.Common.Address home_address =33;
-  reserved 34 to 40;
+  Workstream.Protocol.Common.Phone mobile_phone =34;
+  reserved 35 to 40;
 
   // Work Address
   string work_location_name =41;

@@ -89,6 +89,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :home_email, :string, 31
       optional :home_phone, :message, 32, "Workstream.Protocol.Common.Phone"
       optional :home_address, :message, 33, "Workstream.Protocol.Common.Address"
+      optional :mobile_phone, :message, 34, "Workstream.Protocol.Common.Phone"
       optional :work_location_name, :string, 41
       optional :work_email, :string, 42
       optional :work_phone, :message, 43, "Workstream.Protocol.Common.Phone"

@@ -131,10 +131,10 @@ message EmployeeInformationEvent {
   repeated EmergencyContact emergency_contact =51;
 
   // Employment details
-  Workstream.Protocol.Common.Date apply_date =52;
-  Workstream.Protocol.Common.Date hire_date =53;
-  Workstream.Protocol.Common.Date start_date =54;
-  Workstream.Protocol.Common.Date termination_date =55;
+  string apply_date =52;
+  string hire_date =53;
+  string start_date =54;
+  string termination_date =55;
   string job_title =56;
   string department_name =57;
 

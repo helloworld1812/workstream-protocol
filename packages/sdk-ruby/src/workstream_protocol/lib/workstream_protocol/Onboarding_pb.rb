@@ -95,10 +95,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :work_phone, :message, 43, "Workstream.Protocol.Common.Phone"
       optional :work_address, :message, 44, "Workstream.Protocol.Common.Address"
       repeated :emergency_contact, :message, 51, "Workstream.Protocol.Onboarding.EmergencyContact"
-      optional :apply_date, :message, 52, "Workstream.Protocol.Common.Date"
-      optional :hire_date, :message, 53, "Workstream.Protocol.Common.Date"
-      optional :start_date, :message, 54, "Workstream.Protocol.Common.Date"
-      optional :termination_date, :message, 55, "Workstream.Protocol.Common.Date"
+      optional :apply_date, :string, 52
+      optional :hire_date, :string, 53
+      optional :start_date, :string, 54
+      optional :termination_date, :string, 55
       optional :job_title, :string, 56
       optional :department_name, :string, 57
     end

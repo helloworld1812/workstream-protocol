@@ -84,7 +84,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :ssn, :string, 20
       optional :smoker, :bool, 21
       optional :nationality, :string, 22
-      optional :date_of_birth, :message, 23, "Workstream.Protocol.Common.Date"
+      optional :date_of_birth, :string, 23
       optional :middle_initial, :string, 24
       optional :home_email, :string, 31
       optional :home_phone, :message, 32, "Workstream.Protocol.Common.Phone"

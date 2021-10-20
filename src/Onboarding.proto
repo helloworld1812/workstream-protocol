@@ -109,7 +109,7 @@ message EmployeeInformationEvent {
   string ssn =20;
   bool smoker =21;
   string nationality =22;
-  Workstream.Protocol.Common.Date date_of_birth =23;
+  string date_of_birth =23;
   string middle_initial =24;
   reserved 25 to 30;
 

@@ -2,7 +2,7 @@ syntax = "proto3";
 import "Common/Phone.proto";
 import "Common/Address.proto";
 import "google/protobuf/timestamp.proto";
-import "Common/Date.proto";
+//import "Common/Date.proto";
 
 package Workstream.Protocol.Onboarding;
 
@@ -57,6 +57,7 @@ message CompanyStaffEvent {
   string name =8;
   string email =9;
   Workstream.Protocol.Common.Phone phone =10;
+  bool is_support =11;
 }
 
 message CompanyRoleEvent {

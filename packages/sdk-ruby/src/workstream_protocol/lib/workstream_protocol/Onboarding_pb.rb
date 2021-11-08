@@ -6,7 +6,6 @@ require 'google/protobuf'
 require 'Common/Phone_pb'
 require 'Common/Address_pb'
 require 'google/protobuf/timestamp_pb'
-require 'Common/Date_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("Onboarding.proto", :syntax => :proto3) do
     add_message "Workstream.Protocol.Onboarding.EmployeeOnboardingEvent" do
@@ -46,6 +45,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 8
       optional :email, :string, 9
       optional :phone, :message, 10, "Workstream.Protocol.Common.Phone"
+      optional :is_support, :bool, 11
     end
     add_message "Workstream.Protocol.Onboarding.CompanyRoleEvent" do
       optional :id, :string, 1

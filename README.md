@@ -42,7 +42,7 @@ From Google - https://developers.google.com/protocol-buffers/docs/overview
 
 > Protocol buffers have many advantages over XML for serializing
 > structured data. Protocol buffers are:
-> 
+>
 > -   simpler,
 > -   3 to 10 times smaller,
 > -   20 to 100 times faster,
@@ -64,8 +64,8 @@ To install protobuffs on Ubuntu:
 - Move protoc3/include to /usr/local/include/
 	- `$ sudo mv protoc3/include/* /usr/local/include/`
 - Optional: change owner
-	- `$ sudo chwon [USER] /usr/local/bin/protoc`
-	- ` $ sudo chwon -R [USER] /usr/local/include/google`
+	- `$ sudo chown [USER] /usr/local/bin/protoc`
+	- ` $ sudo chown -R [USER] /usr/local/include/google`
 
 To install protobuffs on Mac OS X
 

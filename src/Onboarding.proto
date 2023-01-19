@@ -161,5 +161,6 @@ message LocationEvent {
 
   google.protobuf.Timestamp created_at =4;
   google.protobuf.Timestamp updated_at =5;
+  google.protobuf.Timestamp deleted_at =6;
 }
 

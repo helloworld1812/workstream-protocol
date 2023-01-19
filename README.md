@@ -65,7 +65,7 @@ To install protobuffs on Ubuntu:
 	- `$ sudo mv protoc3/include/* /usr/local/include/`
 - Optional: change owner
 	- `$ sudo chown [USER] /usr/local/bin/protoc`
-	- ` $ sudo chown -R [USER] /usr/local/include/google`
+	- `$ sudo chown -R [USER] /usr/local/include/google`
 
 To install protobuffs on Mac OS X
 
@@ -77,7 +77,12 @@ brew install protobuf
 
 ## Usage
 
-TODO. We don't have this section done yet. If you'd like to help us by opening a PR for it, please do so!
+TODO. We don't have this section detailed completely yet. If you'd like to help us by opening a PR for it, please do so!
+
+**To compile for Ruby**
+```
+protoc --proto_path=src --ruby_out=packages/sdk-ruby/src/workstream_protocol/lib/workstream_protocol src/Onboarding.proto
+```
 
 ## Contribute
 

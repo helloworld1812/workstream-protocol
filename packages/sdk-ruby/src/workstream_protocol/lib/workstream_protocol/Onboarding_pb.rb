@@ -117,6 +117,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :identify_code, :string, 3
     optional :created_at, :message, 4, "google.protobuf.Timestamp"
     optional :updated_at, :message, 5, "google.protobuf.Timestamp"
+    optional :deleted_at, :message, 6, "google.protobuf.Timestamp"
   end
 end
 

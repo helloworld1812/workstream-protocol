@@ -138,7 +138,7 @@ message EmployeeInformationEvent {
   string termination_date =55;
   string job_title =56;
   string department_name =57;
-  string hired_location =58;
+  string hired_location_id =58;
 }
 
 message EmployeeInitialStateEvent {

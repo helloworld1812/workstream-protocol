@@ -52,7 +52,7 @@ message CompanyStaffEvent {
   google.protobuf.Timestamp updated_at =4;
   google.protobuf.Timestamp deleted_at =5;
 
-  string  company_id =6;
+  string company_id =6;
   string status =7;
   string name =8;
   string email =9;
@@ -158,9 +158,10 @@ message LocationEvent {
   string id =1;
   string name =2;
   string identify_code =3;
+  string company_id =4;
 
-  google.protobuf.Timestamp created_at =4;
-  google.protobuf.Timestamp updated_at =5;
-  google.protobuf.Timestamp deleted_at =6;
+  google.protobuf.Timestamp created_at =5;
+  google.protobuf.Timestamp updated_at =6;
+  google.protobuf.Timestamp deleted_at =7;
 }
 

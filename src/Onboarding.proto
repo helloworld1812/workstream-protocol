@@ -165,3 +165,18 @@ message LocationEvent {
   google.protobuf.Timestamp deleted_at =7;
 }
 
+message W4Event {
+  string id =1;
+  string first_name =2;
+  string middle_name =3;
+  string last_name =4;
+  string ssn =5;
+  bool is_exempt_from_withholding =6;
+  string federal_filing_status =7;
+  int32 qualifying_children_num =8;
+  int32 qualifying_other_num =9;
+  int32 deductions =10;
+  int32 other_income =11;
+  int32 extra_withholding =12;
+}
+

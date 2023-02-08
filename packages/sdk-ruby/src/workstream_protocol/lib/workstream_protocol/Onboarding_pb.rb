@@ -120,6 +120,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :updated_at, :message, 6, "google.protobuf.Timestamp"
     optional :deleted_at, :message, 7, "google.protobuf.Timestamp"
   end
+  add_message "Workstream.Protocol.Onboarding.W4Event" do
+    optional :id, :string, 1
+    optional :first_name, :string, 2
+    optional :middle_name, :string, 3
+    optional :last_name, :string, 4
+    optional :ssn, :string, 5
+    optional :is_exempt_from_withholding, :bool, 6
+    optional :federal_filing_status, :string, 7
+    optional :qualifying_children_num, :int32, 8
+    optional :qualifying_other_num, :int32, 9
+    optional :deductions, :int32, 10
+    optional :other_income, :int32, 11
+    optional :extra_withholding, :int32, 12
+  end
 end
 
 module Workstream
@@ -134,6 +148,7 @@ module Workstream
       EmployeeInformationEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeInformationEvent").msgclass
       EmployeeInitialStateEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeInitialStateEvent").msgclass
       LocationEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.LocationEvent").msgclass
+      W4Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.W4Event").msgclass
     end
   end
 end

@@ -133,6 +133,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :deductions, :int32, 10
     optional :other_income, :int32, 11
     optional :extra_withholding, :int32, 12
+    optional :employee_id, :string, 13
+    optional :created_at, :message, 14, "google.protobuf.Timestamp"
+    optional :updated_at, :message, 15, "google.protobuf.Timestamp"
+    optional :deleted_at, :message, 16, "google.protobuf.Timestamp"
   end
 end
 

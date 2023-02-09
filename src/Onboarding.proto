@@ -178,5 +178,9 @@ message W4Event {
   int32 deductions =10;
   int32 other_income =11;
   int32 extra_withholding =12;
+  string employee_id =13;
+  google.protobuf.Timestamp created_at =14;
+  google.protobuf.Timestamp updated_at =15;
+  google.protobuf.Timestamp deleted_at =16;
 }
 

@@ -18,6 +18,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :app_version, :string, 9
     optional :configuration_id, :string, 10
     optional :configuration_snapshot, :string, 11
+    optional :status, :string, 12
   end
   add_message "Workstream.Protocol.Onboarding.CompanyEvent" do
     optional :id, :string, 1

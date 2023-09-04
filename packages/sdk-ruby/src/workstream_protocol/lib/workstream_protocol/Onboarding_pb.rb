@@ -102,6 +102,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :job_title, :string, 56
     optional :department_name, :string, 57
     optional :hire_location_id, :string, 58
+    optional :basic_info_module_submitted, :bool, 59
   end
   add_message "Workstream.Protocol.Onboarding.EmployeeInitialStateEvent" do
     optional :id, :string, 1

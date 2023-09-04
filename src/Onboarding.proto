@@ -140,6 +140,9 @@ message EmployeeInformationEvent {
   string job_title =56;
   string department_name =57;
   string hire_location_id =58;
+
+  // Basic Information flag
+  bool basic_info_module_submitted =59;
 }
 
 message EmployeeInitialStateEvent {

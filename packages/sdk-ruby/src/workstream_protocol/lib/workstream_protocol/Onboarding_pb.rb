@@ -139,17 +139,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :updated_at, :message, 15, "google.protobuf.Timestamp"
     optional :deleted_at, :message, 16, "google.protobuf.Timestamp"
   end
-  add_message "Workstream.Protocol.Onboarding.CoreEmployeeOnboardingModuleEvent" do
+  add_message "Workstream.Protocol.Onboarding.WSCoreEmployeeOnboardingEvent" do
     optional :id, :string, 1
-    optional :core_company_id, :string, 2
-    optional :core_employee_id, :string, 3
-    optional :core_created_at, :message, 4, "google.protobuf.Timestamp"
-    optional :core_updated_at, :message, 5, "google.protobuf.Timestamp"
-    optional :core_deleted_at, :message, 6, "google.protobuf.Timestamp"
+    optional :company_id, :string, 2
+    optional :employee_id, :string, 3
+    optional :created_at, :message, 4, "google.protobuf.Timestamp"
+    optional :updated_at, :message, 5, "google.protobuf.Timestamp"
+    optional :deleted_at, :message, 6, "google.protobuf.Timestamp"
     optional :status, :string, 7
     optional :type, :string, 8
-    optional :core_completed_at, :message, 9, "google.protobuf.Timestamp"
-    optional :core_last_restarted_at, :message, 10, "google.protobuf.Timestamp"
+    optional :completed_at, :message, 9, "google.protobuf.Timestamp"
+    optional :last_restarted_at, :message, 10, "google.protobuf.Timestamp"
     optional :manually_completed_by, :string, 11
   end
 end
@@ -167,7 +167,7 @@ module Workstream
       EmployeeInitialStateEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.EmployeeInitialStateEvent").msgclass
       LocationEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.LocationEvent").msgclass
       W4Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.W4Event").msgclass
-      CoreEmployeeOnboardingModuleEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.CoreEmployeeOnboardingModuleEvent").msgclass
+      WSCoreEmployeeOnboardingEvent = Google::Protobuf::DescriptorPool.generated_pool.lookup("Workstream.Protocol.Onboarding.WSCoreEmployeeOnboardingEvent").msgclass
     end
   end
 end

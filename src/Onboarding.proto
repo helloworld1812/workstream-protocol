@@ -185,3 +185,16 @@ message W4Event {
   google.protobuf.Timestamp deleted_at =16;
 }
 
+message WSCoreEmployeeOnboardingEvent {
+  string id=1;
+  string company_id=2;
+  string employee_id=3;
+  google.protobuf.Timestamp created_at=4;
+  google.protobuf.Timestamp updated_at=5;
+  google.protobuf.Timestamp deleted_at=6;
+  string status=7;
+  string type=8;
+  google.protobuf.Timestamp completed_at=9;
+  google.protobuf.Timestamp last_restarted_at=10;
+  string manually_completed_by=11;
+}

@@ -183,6 +183,7 @@ message W4Event {
   google.protobuf.Timestamp created_at =14;
   google.protobuf.Timestamp updated_at =15;
   google.protobuf.Timestamp deleted_at =16;
+  bool multiple_jobs_or_spouse_working =17;
 }
 
 message WSCoreEmployeeOnboardingEvent {

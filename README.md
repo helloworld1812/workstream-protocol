@@ -1,3 +1,4 @@
+*This repo is currently only used to define Kafka schema. If you have other use cases, please reach out to @xin.zhou on Slack. Thanks!*
 <div align="center">
   <img alt="Workstream logo" src="https://user-images.githubusercontent.com/1224077/103751454-4d9b8200-5043-11eb-83b8-1743914b1125.png" width="400px" />
 
